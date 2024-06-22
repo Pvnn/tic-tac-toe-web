@@ -22,6 +22,7 @@ function handleClick(event){
   button= event.target;
   const rows= parseInt(button.getAttribute('data-row'));
   const columns= parseInt(button.getAttribute('data-col'));
+  displayMove(button);
   playgame(rows, columns);
   button.removeEventListener("click", handleClick);
 }
@@ -76,6 +77,10 @@ function checkWin(board){
   }
   if(won){
     result= `Player ${turn} wins.`
+    document.body.querySelector('.result-line').innerHTML=result;
     console.log(result);
   }
+}
+function displayMove(button){
+  button.innerHTML=`<img src="IMAGES\\tic-tac-toe-${turn}.png" class="css-move">`;
 }

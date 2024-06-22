@@ -1,3 +1,10 @@
+body{
+  background-color: rgba(0, 0, 0, 0.836);
+
+}
+h2{
+  color: white;
+}
 .css-grid {
   display: grid;
   grid-template-columns: 50px 50px 50px;
@@ -7,10 +14,25 @@
   justify-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
+  align-items: center;
+  vertical-align: center;
 }
 .js-square{
   width: 50px;
   height: 50px;
   cursor: pointer;
   border: none;
+  background-color: white;
+}
+.css-move{
+  object-fit: contain;
+  width: 30px;
+  height: 30px;
+  margin: 0px 0px;
+}
+.result-line{
+  color: white;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
