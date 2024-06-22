@@ -16,7 +16,7 @@
       margin-top: 10px;
       margin-bottom: 10px;
     }
-    .play-button{
+    .js-square{
       width: 50px;
       height: 50px;
       cursor: pointer;
@@ -27,33 +27,15 @@
 <body>
   <h2>Tic - Tac - Toe</h2>
   <div class="css-grid">
-    <div>
-      <button class="play-button js-square-1">  </button>
-    </div>
-    <div>
-      <button class="play-button js-square-2">  </button>
-    </div>
-    <div>
-      <button class="play-button js-square-3">  </button>
-    </div>
-    <div>
-      <button class="play-button js-square-4">  </button>
-    </div>
-    <div>
-      <button class="play-button js-square-5">  </button>
-    </div>
-    <div>
-      <button class="play-button js-square-6">  </button>
-    </div>
-    <div>
-      <button class="play-button js-square-7">  </button>
-    </div>
-    <div>
-      <button class="play-button js-square-8">  </button>
-    </div>
-    <div>
-      <button class="play-button js-square-9">  </button>
-    </div>
+    <button class="js-square" data-row="0" data-col="0"></button>
+    <button class="js-square" data-row="0" data-col="1"></button>
+    <button class="js-square" data-row="0" data-col="2"></button>
+    <button class="js-square" data-row="1" data-col="0"></button>
+    <button class="js-square" data-row="1" data-col="1"></button>
+    <button class="js-square" data-row="1" data-col="2"></button>
+    <button class="js-square" data-row="2" data-col="0"></button>
+    <button class="js-square" data-row="2" data-col="1"></button>
+    <button class="js-square" data-row="2" data-col="2"></button>
   </div>
   <button>Reset Score</button>
   <script src="SCRIPTS\tic-tac-toe.js"></script>

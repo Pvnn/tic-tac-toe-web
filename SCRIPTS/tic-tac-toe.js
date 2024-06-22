@@ -11,30 +11,21 @@ let moveCount= 0;
 
 
 /*----- event listeners -----*/
-document.body.querySelector('.js-square-1')
-  .addEventListener("click", ()=>playgame([0, 0]));
-document.body.querySelector('.js-square-2')
-  .addEventListener("click", ()=>playgame([0, 1]));
-document.body.querySelector('.js-square-3')
-  .addEventListener("click", ()=>playgame([0, 2]));
-document.body.querySelector('.js-square-4')
-  .addEventListener("click", ()=>playgame([1, 0]));
-document.body.querySelector('.js-square-5')
-  .addEventListener("click", ()=>playgame([1, 1]));
-document.body.querySelector('.js-square-6')
-  .addEventListener("click", ()=>playgame([1, 2]));
-document.body.querySelector('.js-square-7')
-  .addEventListener("click", ()=>playgame([2, 0]));
-document.body.querySelector('.js-square-8')
-  .addEventListener("click", ()=>playgame([2, 1]));
-document.body.querySelector('.js-square-9')
-  .addEventListener("click", ()=>playgame([2, 2]));
+document.body.querySelectorAll(`.js-square`).forEach(button =>{
+  button.addEventListener("click", handleClick)
+})
 
 
 /*----- functions -----*/
-function playgame(square){
-  row= square[0];
-  column= square[1];
+function handleClick(event){
+  button= event.target;
+  const rows= parseInt(button.getAttribute('data-row'));
+  const columns= parseInt(button.getAttribute('data-col'));
+  playgame(rows, columns);
+  button.removeEventListener("click", handleClick);
+}
+
+function playgame(row, column){
   moveCount++;
   if(turn=="X"){
     boardX[row][column]= 1;
@@ -43,8 +34,6 @@ function playgame(square){
     boardO[row][column]= 1;
     turn= "X";
   }
-  const button= document.body.querySelector(`.js-square-${row * 3 + column +1}`);
-  button.removeEventListener("click", ()=> playgame(square));
   render(boardX, "X");
   render(boardO, "O");
 }
