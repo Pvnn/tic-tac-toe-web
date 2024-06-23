@@ -15,6 +15,7 @@ let result= ""
 document.body.querySelectorAll(`.js-square`).forEach(button =>{
   button.addEventListener("click", handleClick)
 })
+document.body.querySelector(".reset-button").addEventListener("click", resetScore);
 
 
 /*----- functions -----*/
@@ -27,6 +28,19 @@ function handleClick(event){
     playgame(rows, columns);
     button.removeEventListener("click", handleClick);
   }
+}
+
+function resetScore(){
+  result="";
+  document.body.querySelector('.result-line').innerHTML=result;
+  boardX= [['0','0','0'], ['0','0','0'], ['0','0','0']];
+  boardO= [['0','0','0'], ['0','0','0'], ['0','0','0']];
+  document.body.querySelectorAll(`.js-square`).forEach(button =>{
+    button.addEventListener("click", handleClick);
+  });
+  document.body.querySelectorAll(`.js-square`).forEach(button =>{
+    button.innerHTML='';
+  });
 }
 
 function playgame(row, column){
@@ -102,7 +116,6 @@ function checkWin(board){
     result= `Player ${turn} wins.`
     highlightWinningSquares(winningCombination);
     document.body.querySelector('.result-line').innerHTML=result;
-    console.log(result);
   }
 }
 function displayMove(button){
