@@ -1,38 +1,58 @@
-body{
-  background-color: rgba(0, 0, 0, 0.836);
-
-}
-h2{
+/* General Styles */
+body {
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
   color: white;
 }
+
+h2 {
+  margin-top: 20px;
+}
+
 .css-grid {
   display: grid;
-  grid-template-columns: 50px 50px 50px;
-  row-gap: 5px;
-  column-gap: 5px;
-  align-items: center;
-  justify-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  align-items: center;
-  vertical-align: center;
+  grid-template-columns: repeat(3, 60px);
+  gap: 10px;
+  margin: 20px 0;
 }
-.js-square{
-  width: 50px;
-  height: 50px;
+
+.js-square {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border: 2px solid #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
   cursor: pointer;
-  border: none;
-  background-color: white;
+  position: relative;
 }
-.css-move{
-  object-fit: contain;
-  width: 30px;
-  height: 30px;
-  margin: 0px 0px;
+
+.css-move {
+  width: 40px;
+  height: 40px;
 }
-.result-line{
+
+.result-line {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #555;
   color: white;
-  font-style: italic;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
   margin-top: 10px;
-  margin-bottom: 10px;
+}
+
+.reset-button:hover {
+  background-color: #777;
 }
